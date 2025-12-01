@@ -1,0 +1,7 @@
+if you can read this message
+it's meen that you already
+read this text file in your
+program.
+Please, don't forget close
+the file.
+Good luck!
