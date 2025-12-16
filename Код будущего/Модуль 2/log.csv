@@ -1,0 +1,4 @@
+level,code,datetime,message
+INFO,200,15/12/2025_08:03,user was authorized
+ERROR,403,15/12/2025_08:15,can't authorize user
+WARNING,259,15/12/2025_09:47,...but OK!
