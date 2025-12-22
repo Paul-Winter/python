@@ -11,3 +11,4 @@ with open("data.txt", "r") as file:
         print(file.readline(), end="")
     print()
     print(len(myList))
+    

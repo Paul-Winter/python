@@ -11,3 +11,4 @@ with open("data.txt", "r") as file:
         with open("copy.txt", "a+") as copyFile:
             copyFile.write(str(i) + ": " + line)
         i = i + 1
+        

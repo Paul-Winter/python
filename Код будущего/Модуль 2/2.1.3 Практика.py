@@ -7,3 +7,4 @@ with open("data.txt", "r") as file:
         if "ERROR" in line:
             i = i + 1
     print(i)
+    
