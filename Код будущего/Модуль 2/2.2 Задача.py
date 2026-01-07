@@ -2,6 +2,10 @@
 # - изменить предыдущую программу так, чтобы в случае ошибки
 #   сообщение записывалось в лог-файл
 
+# import datetime
+# from datetime import datetime
+# datetime.now()
+
 def input_float(type):
     while True:
         try:

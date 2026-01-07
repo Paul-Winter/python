@@ -39,9 +39,9 @@ while True:
     # finally:
     #     print("finally работает всегда")
 
-try:
-    print(num)
-except NameError:
-    print("Переменная num не определена")
+# try:
+#     print(num)
+# except NameError:
+#     print("Переменная num не определена")
 
 print('123')

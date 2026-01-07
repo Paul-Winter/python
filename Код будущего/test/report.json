@@ -1,0 +1,9 @@
+{
+	"host":	{
+	"ip": "192.168.0.1",
+	"services":	[
+		{"port": 80, "vulnerabilities": ["CVE-2022-1", "CVE-2023-2"]},
+		{"port": 22, "vulnerabilities": []}
+	]
+	}
+}

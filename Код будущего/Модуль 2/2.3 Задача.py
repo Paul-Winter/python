@@ -10,7 +10,7 @@ def input_float(type):
         except ValueError:
             print("Ошибка:введите числа")
             with open("calculator.log", 'a', encoding="UTF-8") as file:
-                file.write("введены некорректные данные")
+                file.write("введены некорректные данные\n")
         else:
             break
     return x
@@ -36,7 +36,7 @@ while True:
             except ZeroDivisionError:
                print("Ошибка:деление на ноль")
                with open("calculator.log", 'a', encoding="UTF-8") as file:
-                   file.write("деление на ноль")
+                   file.write("деление на ноль\n")
         case _:
             with open("calculator.log", 'a', encoding="UTF-8") as file:
                 file.write("Введён неверный код операции\n")
@@ -51,9 +51,7 @@ while True:
             case _:
                 print("Введите 'y' или 'n'")
                 with open("calculator.log", 'a', encoding="UTF-8") as file:
-                    file.write("Введёно недопутимое действие\n")
+                    file.write("Введёно недопустимое действие\n")
     if ex == 'n':
         print("Конец работы программы")
         break
-    
-
