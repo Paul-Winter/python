@@ -5,14 +5,15 @@
 while True:
     try:
         # raise IndexError()
-        myfile = open("123.txt")
-        a = int(input("Введите число: "))
-        num = (int(input("Введите число: ")))/a
-        b = 2
-        c = '2'
-        print(b+c)
-        n = [1,2,3]
-        a = 5/n[4]
+        # myfile = open("123.txt")
+        # a = int(input("Введите число: "))
+        # num = (int(input("Введите число: ")))/a
+        # b = 2
+        # c = '2'
+        # print(b+c)
+        # n = [1,2,3]
+        # a = 5/n[4]
+        print(1)
     except ValueError:
         print("Это не целое число!")
     except ZeroDivisionError:
@@ -26,14 +27,17 @@ while True:
     except FileNotFoundError:
         print('Файл не найден')
         break
+    except KeyboardInterrupt:
+        print("Прервано пользователем")
+        break
     except:
         print("Неизвестная ошибка!")
         break
-    else:
-        break
+    # else:
+    #     break
         # print("Введено корректное число")
-    finally:
-        print("finally работает всегда")
+    # finally:
+    #     print("finally работает всегда")
 
 try:
     print(num)
