@@ -5,10 +5,11 @@
 import os
 os.chdir("C:\\test")    #???
 with open("data.txt", "r") as file:
-    myList = file.readlines()
-    file.seek(0,0)
-    for i in range(len(myList)):
-        print(file.readline(), end="")
+    i = 0
+    for line in file:
+        print(line, end="")
+        i = i + 1
     print()
-    print(len(myList))
+    print(i)
+
     
