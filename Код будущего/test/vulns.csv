@@ -1,0 +1,10 @@
+IP Address,Port,Vulnerability,CVSS,Severity,Description,Solution
+192.168.0.1,80,CVE-2023-1234,9.8,Critical,Buffer overflow,...,Update software
+192.168.0.1,443,CVE-2022-0001,5.6,Medium,XSS,...,Apply patch
+192.168.0.2,22,CVE-2020-1111,7.2,High,SSH weakness,...,Disable old ciphers
+192.168.0.3,21,CVE-2021-2121,2.0,Low,XSS,...,Disable old ciphers
+192.168.0.4,8080,CVE-2020-1001,9.6,Critical,Buffer overflow,...,Update software
+192.168.0.5,8080,CVE-2022-0001,5.2,Medium,XSS,...,Disable old ciphers
+192.168.0.3,8081,CVE-2022-0001,6.0,Medium,XSS,...,Disable old ciphers
+192.168.0.4,21,CVE-2020-1111,7.2,High,SSH weakness,...,Disable old ciphers
+192.168.0.4,443,CVE-2025-3456,9.2,Critical,Buffer overflow,...,Update software

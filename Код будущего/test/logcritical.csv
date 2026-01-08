@@ -1,0 +1,4 @@
+IP Address,Port,Vulnerability,CVSS,Severity,Description,Solution
+192.168.0.1,80,CVE-2023-1234,9.8,Critical,Buffer overflow,...,Update software
+192.168.0.4,8080,CVE-2020-1001,9.6,Critical,Buffer overflow,...,Update software
+192.168.0.4,443,CVE-2025-3456,9.2,Critical,Buffer overflow,...,Update software
