@@ -11,4 +11,4 @@ for element in data:
     print(f"{element["name"]} {element["age"]}")
 
 with open("out.json", "w", encoding="utf-8") as file:
-    json.dump(data, file, indent=4)
+    json.dump(data, file, ensure_ascii=False, indent=4)

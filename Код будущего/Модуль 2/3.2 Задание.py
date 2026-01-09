@@ -29,19 +29,16 @@
 
 from collections import Counter
 
-def top3_ips(log_file="vulns.log"):
-    try:
-        ips = []
-        with open(log_file, "r", encoding="utf-8") as f:
-            for line in f:
-                parts = line.strip().split()
-                if parts:
-                    ips.append(parts[0])
-        counter = Counter(ips)
-        for ip, count in counter.most_common(3):
-            print(f"{ip}: {count}")
-    except FileNotFoundError:
-        print(f"Файл {log_file} не найден")
-
-if __name__ == "__main__":
-    top3_ips()
+log_file="vulns.log"
+try:
+    ips = []
+    with open(log_file, "r", encoding="utf-8") as f:
+        for line in f:
+            parts = line.strip().split()
+            if parts:
+                ips.append(parts[0])
+    counter = Counter(ips)
+    for ip, count in counter.most_common(3):
+        print(f"{ip}: {count}")
+except FileNotFoundError:
+    print(f"Файл {log_file} не найден")

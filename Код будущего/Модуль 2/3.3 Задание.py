@@ -10,16 +10,14 @@
 # 5. Если файла security.log почему-то нет, нужно вывести сообщение:
 #    Файл security.log не найден.
 
-def extract_critical(src="security.log", dst="critical.log"):
-    try:
-        with open(src, "r", encoding="utf-8") as f:
-            with open(dst, "w", encoding="utf-8") as out:
-                for line in f:
-                    if "Critical" in line:
-                        out.write(line)
-        print("Готово")
-    except FileNotFoundError:
-        print(f"Файл {src} не найден")
-
-if __name__ == "__main__":
-    extract_critical()
+src="security.log"
+dst="critical.log"
+try:
+    with open(src, "r", encoding="utf-8") as f:
+        with open(dst, "w", encoding="utf-8") as out:
+            for line in f:
+                if "Critical" in line:
+                    out.write(line)
+    print("Готово")
+except FileNotFoundError:
+    print(f"Файл {src} не найден")
