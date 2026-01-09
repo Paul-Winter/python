@@ -1,6 +1,10 @@
 # фильтрация логов по уровню:
 # - прочитать лог log.txt
 # - сохранить только строки с уровнями ERROR и WARNING в errors.txt
+
+import os
+os.chdir("C:\\Users\\Student\\python\\Код будущего\\test")
+
 def filter_logs(input_file="log.txt", output_file="errors.txt"):
     try:
         with open(input_file, 'r', encoding="utf-8") as infile:

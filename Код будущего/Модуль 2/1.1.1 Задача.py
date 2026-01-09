@@ -3,7 +3,7 @@
 # - построчно вывести его содержимое
 # - подсчитать общее количество строк в файле
 import os
-os.chdir("C:\\test")    #???
+os.chdir("C:\\Users\\Student\\python\\Код будущего\\test")   #???
 with open("data.txt", "r") as file:
     myList = file.readlines()
     file.seek(0,0)

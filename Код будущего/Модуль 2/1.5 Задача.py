@@ -2,7 +2,7 @@
 # - извлечь дату из каждой строки
 # - подсчитать, сколько событий произошло в каждой дате
 import os
-os.chdir("C:\\test")    #???
+os.chdir("C:\\Users\\Student\\python\\Код будущего\\test")    #???
 logsinfo = {}
 with open("log.txt", "r") as file:
     for line in file:

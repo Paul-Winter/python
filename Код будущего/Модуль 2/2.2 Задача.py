@@ -5,6 +5,8 @@
 # import datetime
 # from datetime import datetime
 # datetime.now()
+import os
+os.chdir("C:\\Users\\Student\\python\\Код будущего\\test")
 
 def input_float(type):
     while True:

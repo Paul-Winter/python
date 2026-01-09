@@ -1,0 +1,12 @@
+[
+    {
+        "name": "\u0410\u043b\u0438\u0441\u0430",
+        "age": 30,
+        "isEmployed": true
+    },
+    {
+        "name": "\u0411\u043e\u0431",
+        "age": 25,
+        "isEmployed": false
+    }
+]
