@@ -18,7 +18,8 @@ import re
 
 src="security.log"
 dst="sorted.log"
-pattern = re.compile(r"(CVE-\d{4}-\d{4,7}).*?CVSS: (\d+\.\d+)")
+
+pattern = re.compile(r"(CVE-\d{4}-\d{4,7}).*?CVSS:(\d+\.\d+)")
 vulns = []
 try:
     with open(src, "r", encoding="utf-8") as f:
@@ -29,9 +30,9 @@ try:
                 cvss = float(m.group(2))
                 vulns.append((cve, cvss))
     if not vulns:
-        print("Нет уязвимостей")
-    
+        print("Нет уязвимостей")    
     vulns.sort(key=lambda x: x[1], reverse=True)
+
     with open(dst, "w", encoding="utf-8") as out:
         for cve, cvss in vulns:
             out.write(f"{cve} {cvss}\n")
