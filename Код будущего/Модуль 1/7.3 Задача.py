@@ -16,3 +16,5 @@ result.update(dict_c)
 # result = {**dict_a, **dict_b, **dict_c}
 
 print(result)
+
+
