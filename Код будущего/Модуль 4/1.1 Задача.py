@@ -10,27 +10,27 @@
 
 # Читаем лог-файл
 with open("log.txt", "r", encoding="utf-8") as file:
-   for line in file:
-       line = line.strip()
-       if not line or len(line) < 20:
-           continue
+    for line in file:
+        line = line.strip()
+        if not line or len(line) < 20:
+            continue
       
-       try:
-           # Извлекаем время (HH:MM:SS) по индексам
-           time_str = line[11:19]
-           hour = int(time_str[:2])
+        try:
+            # Извлекаем время (HH:MM:SS) по индексам
+            time_str = line[11:19]
+            hour = int(time_str[:2])
           
-           # Находим имя пользователя более надежно
-           # Делим строку по тире, убираем лишние пробелы у каждого куска
-           parts = [p.strip() for p in line.split("-")]
+            # Находим имя пользователя более надежно
+            # Делим строку по тире, убираем лишние пробелы у каждого куска
+            parts = [p.strip() for p in line.split("-")]
           
-           if len(parts) >= 2:
-               username = parts[1]
+            if len(parts) >= 2:
+                username = parts[1]
               
                # Аномалия: до 8:00 или начиная с 16:00
-               if hour < 8 or hour >= 16:
-                   print(f"Пользователь {username} вошел в неположенное время: {time_str}")
+                if hour < 8 or hour >= 16:
+                    print(f"Пользователь {username} вошел в неположенное время: {time_str}")
                   
-       except Exception:
-           # Если строка не подошла, просто идём к следующей
-           continue
+        except Exception:
+            # Если строка не подошла, просто идём к следующей
+            continue

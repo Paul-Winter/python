@@ -12,32 +12,32 @@
 hourly_stats = {}
 
 with open("log.txt", "r", encoding="utf-8") as file:
-   for line in file:
-       line = line.strip()
-       # Пропускаем пустые строки или слишком короткие записи
-       if not line or len(line) < 15:
-           continue
+    for line in file:
+        line = line.strip()
+        # Пропускаем пустые строки или слишком короткие записи
+        if not line or len(line) < 15:
+            continue
           
-       try:
-           # Время в логе находится в формате [YYYY-MM-DD HH:MM:SS]
-           # Извлекаем часы (символы с 12 по 14 индекс)
-           hour = line[12:14]
+        try:
+            # Время в логе находится в формате [YYYY-MM-DD HH:MM:SS]
+            # Извлекаем часы (символы с 12 по 14 индекс)
+            hour = line[12:14]
           
-           if hour.isdigit():
-               # Используем метод get: если часа еще нет в словаре, берем 0 и прибавляем 1
-               hourly_stats[hour] = hourly_stats.get(hour, 0) + 1
-       except:
-           continue
+            if hour.isdigit():
+                # Используем метод get: если часа еще нет в словаре, берем 0 и прибавляем 1
+                hourly_stats[hour] = hourly_stats.get(hour, 0) + 1
+        except:
+            continue
 
 # 2. Сортируем ключи (часы), чтобы гистограмма шла по порядку от 00 до 23
 sorted_hours = sorted(hourly_stats.keys())
 
 # 3. Проходим по отсортированным часам и рисуем график
 for hour in sorted_hours:
-   count = hourly_stats[hour]
-   # Визуализируем количество событий с помощью символа '*'
-   bar = "*" * count
-   print(f"{hour}:00 | {bar} ({count})")
+    count = hourly_stats[hour]
+    # Визуализируем количество событий с помощью символа '*'
+    bar = "*" * count
+    print(f"{hour}:00 | {bar} ({count})")
 
 
 with open('4/4.1/log.txt', 'r', encoding='utf-8') as file:

@@ -14,36 +14,36 @@
 stats = {}
 
 with open("log.txt", "r", encoding="utf-8") as file:
-   for line in file:
-       line = line.strip()
-       if not line:
-           continue
+    for line in file:
+        line = line.strip()
+        if not line:
+            continue
       
-       # Фильтруем только успешные входы
-       if "ACTION:LOGIN" in line and "STATUS:SUCCESS" in line:
-           parts = line.split()
+        # Фильтруем только успешные входы
+        if "ACTION:LOGIN" in line and "STATUS:SUCCESS" in line:
+            parts = line.split()
           
-           # 1. Извлекаем время (оно в квадратных скобках [YYYY-MM-DD HH:MM:SS])
-           # Время — это второй элемент (индекс 1)
-           full_time = parts[1] # Получаем HH:MM:SS]
-           # Убираем секунды и лишнюю скобку, оставляя HH:MM
-           time_hm = full_time[:5]
+            # 1. Извлекаем время (оно в квадратных скобках [YYYY-MM-DD HH:MM:SS])
+            # Время — это второй элемент (индекс 1)
+            full_time = parts[1] # Получаем HH:MM:SS]
+            # Убираем секунды и лишнюю скобку, оставляя HH:MM
+            time_hm = full_time[:5]
           
-           # 2. Извлекаем IP через startswith
-           ip = ""
-           for part in parts:
-               if part.startswith("IP:"):
-                   ip = part.replace("IP:", "")
+            # 2. Извлекаем IP через startswith
+            ip = ""
+            for part in parts:
+                if part.startswith("IP:"):
+                    ip = part.replace("IP:", "")
           
-           # 3. Создаем уникальный ключ для словаря (IP + минута)
-           key = f"{ip}_{time_hm}"
+            # 3. Создаем уникальный ключ для словаря (IP + минута)
+            key = f"{ip}_{time_hm}"
           
-           # Считаем количество входов
-           stats[key] = stats.get(key, 0) + 1
+            # Считаем количество входов
+            stats[key] = stats.get(key, 0) + 1
 
 # Проверяем словарь на превышение лимита в 20 входов
 for key, count in stats.items():
-   if count >= 20:
-       # Разбиваем ключ обратно для красивого вывода
-       ip_addr, time_val = key.split("_")
-       print(f"Подозрительная активность! IP: {ip_addr}, Время: {time_val}, Входов: {count}")
+    if count >= 20:
+        # Разбиваем ключ обратно для красивого вывода
+        ip_addr, time_val = key.split("_")
+        print(f"Подозрительная активность! IP: {ip_addr}, Время: {time_val}, Входов: {count}")

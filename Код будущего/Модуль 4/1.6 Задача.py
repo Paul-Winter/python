@@ -11,28 +11,28 @@
 daily_downloads = {}
 
 with open("log.txt", "r", encoding="utf-8") as file:
-   for line in file:
-       line = line.strip()
-       if not line:
-           continue
+    for line in file:
+        line = line.strip()
+        if not line:
+            continue
           
-       # Ищем только скачивания
-       if "ACTION:DOWNLOAD" in line:
-           # Извлекаем дату (она находится в начале строки [YYYY-MM-DD])
-           date = line[1:11]
-           daily_downloads[date] = daily_downloads.get(date, 0) + 1
+        # Ищем только скачивания
+        if "ACTION:DOWNLOAD" in line:
+            # Извлекаем дату (она находится в начале строки [YYYY-MM-DD])
+            date = line[1:11]
+            daily_downloads[date] = daily_downloads.get(date, 0) + 1
 
 # 2. Получаем отсортированный список дат
 sorted_dates = sorted(daily_downloads.keys())
 
 # 3. Сравниваем количество с предыдущим днем
 for i in range(1, len(sorted_dates)):
-   current_day = sorted_dates[i]
-   previous_day = sorted_dates[i-1]
+    current_day = sorted_dates[i]
+    previous_day = sorted_dates[i-1]
   
-   current_count = daily_downloads[current_day]
-   previous_count = daily_downloads[previous_day]
+    current_count = daily_downloads[current_day]
+    previous_count = daily_downloads[previous_day]
   
-   # Рост БОЛЕЕ чем в два раза (строгое неравенство)
-   if current_count > (previous_count * 2):
-       print(f"Всплеск активности! {current_day}: {current_count} (предыдущий день: {previous_count})")
+    # Рост БОЛЕЕ чем в два раза (строгое неравенство)
+    if current_count > (previous_count * 2):
+        print(f"Всплеск активности! {current_day}: {current_count} (предыдущий день: {previous_count})")
