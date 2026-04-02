@@ -13,32 +13,25 @@
 # - Дополнительно посчитайте, сколько всего антивирусов анализировало файл
 
 import requests
-
 # 1. Читаем хеш из файла
 with open("4.2.1.txt", "r", encoding="utf-8") as file:
    file_hash = file.read().strip()
-
 # 2. Настройки API
 # ВАЖНО: Ученик должен вставить свой ключ
-api_key = "9b74c09a7f09cb0664da47812dcfcb808085a82c1e466f2b26bec095f84ccc97"
+api_key = "9a74c09a7f09cb0664da47812dcfcb808085a82c1e466f2b26bec095f84abc97" # указать свой ключ
 url = f"https://www.virustotal.com/api/v3/files/{file_hash}"
-
 headers = {
    "accept": "application/json",
    "x-apikey": api_key
 }
-
 try:
    # 3. Отправка запроса
-   response = requests.get(url, headers=headers)
-  
+   response = requests.get(url, headers=headers)  
    if response.status_code == 200:
-       data = response.json()
-      
+       data = response.json()      
        # 4. Извлекаем количество движков, пометивших файл как вредоносный
        stats = data['data']['attributes']['last_analysis_stats']
-       malicious_count = stats['malicious']
-      
+       malicious_count = stats['malicious']      
        print(f"Файл проверен. Количество угроз: {malicious_count}")
    elif response.status_code == 401:
        print("Ошибка: Неверный API ключ.")
@@ -46,6 +39,5 @@ try:
        print("Ошибка: Хеш не найден в базе VirusTotal.")
    else:
        print(f"Произошла ошибка при запросе: {response.status_code}")
-
 except Exception as e:
    print(f"Ошибка соединения: {e}")
